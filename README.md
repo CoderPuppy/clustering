@@ -1,6 +1,10 @@
 # Clustering
 ### A small cluster module with a plugin system
 
+## Install
+
+`npm install clustering`
+
 ## Usage
 
 ```javascript

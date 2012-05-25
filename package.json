@@ -2,7 +2,7 @@
 	"name": "clustering",
 	"version": "0.0.1",
 	"author": "Drew",
-	"homepage": "http://github.com/drewyoung1/clustering",
+	"homepage": "http://drewyoung1.github.com/clustering",
 	"description": "A small cluster module with plugin system",
 	"keywords": [ "cluster", "plugins" ],
 	"main": "./lib/index",
