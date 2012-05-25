@@ -3,7 +3,9 @@
 
 ## Install
 
-`npm install clustering`
+```shell
+npm install clustering
+```
 
 ## Usage
 
