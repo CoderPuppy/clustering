@@ -32,3 +32,20 @@ Or `set` a property EG. `set('workers', 128)` (gives you a rediculous amount of 
 
 - `workers` => The number of workers to spawn
 - `working directory` => Where to start new masters and (maybe?) workers
+
+### Plugins
+
+- `cli()` => CLI to the cluster
+	- Define new commands
+		```javascript
+		clustering.cli.define('ways, to, run, this, command, seperated, by, commas', function callback(cluster) {
+			do.stuff();
+		});
+		```
+	- Built-in commands
+		- status (-s, --status) => Shows the status of the cluster
+		- restart (-r, --restart) => Restarts the cluster
+		- stop (-S, --stop) => Kills the cluster
+		- shutdown (-g, --shutdown) => Shuts the cluster down (gracefully)
+		- help (-h, --help) => Shows the help for the commands
+		- background (-b, --background) => Starts the cluster in the background (actually just restarts it)
