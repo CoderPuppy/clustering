@@ -1,0 +1,22 @@
+{
+	"name": "clustering",
+	"version": "0.0.1",
+	"author": "Drew",
+	"homepage": "http://github.com/drewyoung1/clustering",
+	"description": "A small cluster module with plugin system",
+	"keywords": [ "cluster", "plugins" ],
+	"main": "./lib/index",
+	"bugs": "http://github.com/drewyoung1/clustering/issues",
+	"dependencies": {
+		"natives": "*",
+		"colors": "0.6.x",
+		"node-fs": "*"
+	},
+	"repository": {
+		"type" : "git",
+		"url" : "http://github.com/drewyoung1/clustering.git"
+	},
+	"engines": {
+		"node": ">=0.6.6"
+	}
+}
