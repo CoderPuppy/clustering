@@ -13,6 +13,7 @@ clustering(yourServer)
 And that will create a cluster running `yourServer`.
 
 You can also `use` a `plugin` EG. `use(clustering.watch())` (watches the main file)
+
 Or `set` a property EG. `set('workers', 128)` (gives you a rediculous amount of workers)
 
 ## API
