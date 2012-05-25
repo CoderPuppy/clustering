@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Clustering by drewyoung1</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/drewyoung1/clustering">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Clustering</h1>
+            <h2>A small cluster module with a plugin system</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/drewyoung1/clustering/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/drewyoung1/clustering/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>Clustering</h1>
+
+<h3>A small cluster module with a plugin system</h3>
+
+<h2>Install</h2>
+
+<pre lang="shell"><code>npm install clustering
+</code></pre>
+
+<h2>Usage</h2>
+
+<div class="highlight">
+<pre><span class="kd">var</span> <span class="nx">clustering</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'clustering'</span><span class="p">);</span>
+
+<span class="nx">clustering</span><span class="p">(</span><span class="nx">yourServer</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+</pre>
+</div>
+
+
+<p>And that will create a cluster running <code>yourServer</code>.</p>
+
+<p>You can also <code>use</code> a <code>plugin</code> EG. <code>use(clustering.watch())</code> (watches the main file)</p>
+
+<p>Or <code>set</code> a property EG. <code>set('workers', 128)</code> (gives you a rediculous amount of workers)</p>
+
+<h2>API</h2>
+
+<h3>Cluster</h3>
+
+<ul>
+<li>
+<code>use(plugin(Cluster))</code> =&gt; Use a plugin (execute it passing in the cluster)</li>
+<li>
+<code>listen(port, host, callback)</code> =&gt; Listen in workers or Start workers in master</li>
+<li>
+<code>set(prop, value)</code> =&gt; Set options (see <code>options</code>)</li>
+<li>
+<code>restart()</code> =&gt; Restart the cluster (Start a new master and exit)</li>
+<li>
+<code>reload()</code> =&gt; Reload the workers</li>
+<li>
+<code>shutdown([signal])</code> =&gt; Shutdown the workers if there is a signal it sends that to them</li>
+<li>
+<code>kill([signal])</code> =&gt; See <code>shutdown</code>
+</li>
+<li>
+<code>stop([signal])</code> =&gt; See <code>shutdown</code>
+</li>
+</ul><h3>Options</h3>
+
+<ul>
+<li>
+<code>workers</code> =&gt; The number of workers to spawn</li>
+<li>
+<code>working directory</code> =&gt; Where to start new masters and (maybe?) workers</li>
+</ul><h3>Plugins</h3>
+
+<ul>
+<li>
+<code>cli()</code> =&gt; CLI to the cluster
+
+<ul>
+<li>Requires <code>pidfiles</code>
+</li>
+<li>Define new commands =&gt; Look at the source</li>
+<li>Built-in commands
+
+<ul>
+<li>
+<code>status</code> (<code>-s</code>, <code>--status</code>) =&gt; Shows the status of the cluster</li>
+<li>
+<code>restart</code> (<code>-r</code>, <code>--restart</code>) =&gt; Restarts the cluster</li>
+<li>
+<code>stop</code> (<code>-S</code>, <code>--stop</code>) =&gt; Kills the cluster</li>
+<li>
+<code>shutdown</code> (<code>-g</code>, <code>--shutdown</code>) =&gt; Shuts the cluster down (gracefully)</li>
+<li>
+<code>help</code> (<code>-h</code>, <code>--help</code>) =&gt; Shows the help for the commands</li>
+<li>
+<code>background</code> (<code>-b</code>, <code>--background</code>) =&gt; Starts the cluster in the background (actually just restarts it)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<code>watch([files[]], [full])</code> =&gt; Automatically restart / reload the cluster
+
+<ul>
+<li>
+<code>files</code> =&gt; The files to watch. Defaults to the main module</li>
+<li>
+<code>full</code> =&gt; Whether or not to to a full restart</li>
+</ul>
+</li>
+<li>
+<code>pidfiles(dir)</code> =&gt; Save pidfiles for the master and workers
+
+<ul>
+<li>
+<code>dir</code> =&gt; Where to save them</li>
+</ul>
+</li>
+</ul>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/drewyoung1">drewyoung1</a> can be found on <a href="https://github.com/drewyoung1/clustering">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
