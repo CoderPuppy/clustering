@@ -36,16 +36,17 @@ Or `set` a property EG. `set('workers', 128)` (gives you a rediculous amount of 
 ### Plugins
 
 - `cli()` => CLI to the cluster
-	- Define new commands
-		```javascript
-		clustering.cli.define('ways, to, run, this, command, seperated, by, commas', function callback(cluster) {
-			do.stuff();
-		});
-		```
+	- Requires `pidfiles`
+	- Define new commands => Look at the source
 	- Built-in commands
-		- status (-s, --status) => Shows the status of the cluster
-		- restart (-r, --restart) => Restarts the cluster
-		- stop (-S, --stop) => Kills the cluster
-		- shutdown (-g, --shutdown) => Shuts the cluster down (gracefully)
-		- help (-h, --help) => Shows the help for the commands
-		- background (-b, --background) => Starts the cluster in the background (actually just restarts it)
+		- `status` (`-s`, `--status`) => Shows the status of the cluster
+		- `restart` (`-r`, `--restart`) => Restarts the cluster
+		- `stop` (`-S`, `--stop`) => Kills the cluster
+		- `shutdown` (`-g`, `--shutdown`) => Shuts the cluster down (gracefully)
+		- `help` (`-h`, `--help`) => Shows the help for the commands
+		- `background` (`-b`, `--background`) => Starts the cluster in the background (actually just restarts it)
+- `watch([files[]], [full])` => Automatically restart / reload the cluster
+	- `files` => The files to watch. Defaults to the main module
+	- `full` => Whether or not to to a full restart
+- `pidfiles(dir)` => Save pidfiles for the master and workers
+	- `dir` => Where to save them
