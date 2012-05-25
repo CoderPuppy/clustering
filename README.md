@@ -6,7 +6,7 @@
 ```javascript
 var clustering = require('clustering');
 
-cluster(yourServer)
+clustering(yourServer)
 	.listen(3000);
 ```
 
