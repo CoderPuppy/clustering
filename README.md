@@ -27,7 +27,7 @@ Or `set` a property EG. `set('workers', 128)` (gives you a rediculous amount of 
 ### Cluster
 
 - `use(plugin(Cluster))` => Use a plugin (execute it passing in the cluster)
-- `listen(port, host, callback)`** => Listen in workers or Start workers in master
+- `listen(port, host, callback)` => Listen in workers or Start workers in master
 - `set(prop, value)` => Set options (see `options`)
 - `restart()` => Restart the cluster (Start a new master and exit)
 - `reload()` => Reload the workers
