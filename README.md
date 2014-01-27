@@ -1,4 +1,3 @@
-[![build status](https://secure.travis-ci.org/drewyoung1/clustering.png)](http://travis-ci.org/drewyoung1/clustering)
 # Clustering
 ### A small cluster module with a plugin system
 
